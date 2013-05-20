@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSDictionary *msgChatDic;
 @property (strong, nonatomic) NSDictionary *singleMsgChatDic;
+@property (strong, nonatomic) NSMutableDictionary *chatDic;//用于存放聊天页面的数组，索引为indexPath
 
 @property (strong, nonatomic) UISegmentedControl *segmentedController;
 

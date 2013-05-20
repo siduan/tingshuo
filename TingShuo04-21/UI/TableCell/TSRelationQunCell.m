@@ -21,6 +21,9 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (!self) {
+        return nil;
+    }
     if (self) {
         // Initialization code
         self.textLabel.adjustsFontSizeToFitWidth = YES;

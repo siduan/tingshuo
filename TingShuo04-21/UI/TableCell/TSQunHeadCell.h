@@ -17,6 +17,8 @@
 @property (nonatomic, strong) MsgChat *msgReply;
 @property (nonatomic, strong) NSDictionary *mainDic;
 
+@property (nonatomic, strong) NSMutableArray *imageViewArr;//存放发布的图片
+
 //更新内容
 - (void)updateContents:(NSArray *)conArr;
 + (CGFloat)heightForCell:(NSDictionary *)contentDic;

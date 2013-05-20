@@ -14,6 +14,7 @@
 @synthesize msgTextLabel;
 @synthesize msgReply = _msgReply;
 @synthesize mainDic = _mainDic;
+@synthesize imageViewArr = _imageViewArr;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -41,6 +42,8 @@
         [self addSubview:self.msgTextLabel];
         
         self.selectionStyle = UITableViewCellSelectionStyleGray;
+        
+        _imageViewArr = [NSMutableArray arrayWithCapacity:5];
     }
     return self;
 }
@@ -60,6 +63,8 @@
     self.msgTextLabel.text = @"消息 1278";
     
     [self.imageView setImageWithURL:[NSURL URLWithString:_msgReply.imageURL] placeholderImage:[UIImage imageNamed:@"Icon.png"]];
+    
+    [_imageViewArr addObject:self.imageView];
     
     [self setNeedsLayout];
 }

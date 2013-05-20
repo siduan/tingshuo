@@ -10,11 +10,18 @@
 #import "TSTieziHeadCell.h"
 #import "TSTieziContentCell.h"
 
+static CGFloat const kMaxAngle = 0.1;
+static CGFloat const kMaxOffset = 20;
+
 @interface TSTieziViewController ()
 
 @end
 
 @implementation TSTieziViewController
+@synthesize cellImgsDic = _cellImgsDic;
+@synthesize cellImgsArr = _cellImgsArr;
+@synthesize mediaFocusManager = _mediaFocusManager;
+@synthesize releaseViewController = _releaseViewController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -22,8 +29,21 @@
     if (self) {
         // Custom initialization
         self.title = @"来自xxxx群组";
+        
+        UIBarButtonItem *releaseButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(releaseRightBtn:)];
+        self.navigationItem.rightBarButtonItem = releaseButtonItem;
+        [releaseButtonItem release];
     }
     return self;
+}
+
+//评论按钮
+- (void)releaseRightBtn:(id)sender
+{
+    _releaseViewController = [[TSReleaseViewController alloc] init];
+    [self.navigationController pushViewController:_releaseViewController animated:YES];
+    _releaseViewController.title = @"评论";
+    
 }
 
 //更新内容
@@ -54,6 +74,12 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _cellImgsDic = [[NSMutableDictionary alloc] init];
+    _cellImgsArr = [NSMutableArray arrayWithCapacity:5];
+    
+    _mediaFocusManager = [[ASMediaFocusManager alloc] init];
+    _mediaFocusManager.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,6 +121,11 @@
                 cell.delegate = self;
             }
             [cell updateContents:nil];
+            [_cellImgsDic setValue:cell.imageViewArr forKey:[NSString stringWithFormat:@"%d", indexPath.row]];
+            _cellImgsArr = [_cellImgsDic objectForKey:[NSString stringWithFormat:@"%d", indexPath.row]];
+            [self.mediaFocusManager installOnViews:_cellImgsArr];
+            
+            [self addSomeRandomTransformOnThumbnailViews];
             return cell;
             //break;
         }
@@ -171,14 +202,70 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        
+    }
+    else{
+        
+    }
+}
+
+///////////////////以下是点击小图片方大全屏的代码
++ (float)randomFloatBetween:(float)smallNumber andMax:(float)bigNumber
+{
+    float diff = bigNumber - smallNumber;
+    
+    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
+}
+
+- (void)addSomeRandomTransformOnThumbnailViews
+{
+    for(UIView *view in _cellImgsArr)
+    {
+        CGFloat angle;
+        NSInteger offsetX;
+        NSInteger offsetY;
+        
+        angle = [TSTieziViewController randomFloatBetween:-kMaxAngle andMax:kMaxAngle];
+        offsetX = (NSInteger)[TSTieziViewController randomFloatBetween:-kMaxOffset andMax:kMaxOffset];
+        offsetY = (NSInteger)[TSTieziViewController randomFloatBetween:-kMaxOffset andMax:kMaxOffset];
+        //view.transform = CGAffineTransformMakeRotation(angle);//旋转图片
+        //view.center = CGPointMake(view.center.x + offsetX, view.center.y + offsetY);//图片的中心点变了
+        
+        // This is going to avoid crispy edges.
+        view.layer.shouldRasterize = YES;
+        view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    }
+}
+#pragma mark - ASMediaFocusDelegate
+- (UIImage *)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager imageForView:(UIView *)view
+{
+    return ((UIImageView *)view).image;
+}
+
+- (CGRect)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager finalFrameforView:(UIView *)view
+{
+    return self.parentViewController.view.bounds;
+}
+
+- (UIViewController *)parentViewControllerForMediaFocusManager:(ASMediaFocusManager *)mediaFocusManager
+{
+    return self.parentViewController;
+}
+//要放大的那张图片，就是放出去的
+- (NSString *)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager mediaPathForView:(UIView *)view
+{
+    NSString *path;
+    NSString *name;
+    
+    // Here, images are accessed through their name "1f.jpg", "2f.jpg", …
+    //name = [NSString stringWithFormat:@"%df", ([_cellImgsArr indexOfObject:view] + 1)];
+    name = @"Icon";
+    path = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
+    
+    return path;
 }
 
 @end

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSRelationViewController.m"
-         timestampString = "389954400.910058"
+         timestampString = "390300675.510834"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
+         startingLineNumber = "79"
+         endingLineNumber = "79"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSMsgViewController.m"
-         timestampString = "389672970.576845"
+         timestampString = "390217485.393222"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "-reload:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
-         timestampString = "389954956.116666"
+         timestampString = "390451864.830524"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
          landmarkName = "-renren:requestDidReturnResponse:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,25 +203,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
-         timestampString = "389954956.116666"
+         timestampString = "390451864.830524"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
          landmarkName = "-renren:requestFailWithError:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
-         timestampString = "389954956.116666"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
-         landmarkName = "-reload:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -255,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
-         timestampString = "389954956.116666"
+         timestampString = "390451864.830524"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-renren:requestDidReturnResponse:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +294,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/TableCell/TSRelationQunCell.m"
-         timestampString = "389598973.596069"
+         timestampString = "390453895.743058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
          landmarkName = "+heightForCell:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -320,11 +307,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/TableCell/TSRelationQunCell.m"
-         timestampString = "389598973.596069"
+         timestampString = "390453895.743058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-layoutSubviews"
          landmarkType = "5">
       </FileBreakpoint>
@@ -333,11 +320,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/TableCell/TSRelationQunCell.m"
-         timestampString = "389598973.596069"
+         timestampString = "390453895.743058"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
          landmarkName = "-updateContents:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -346,11 +333,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/MainUI/TSRelationViewController.m"
-         timestampString = "389954400.910058"
+         timestampString = "390300675.510834"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "351"
-         endingLineNumber = "351"
+         startingLineNumber = "353"
+         endingLineNumber = "353"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/TableCell/TSTieziHeadCell.m"
-         timestampString = "389612124.727954"
+         timestampString = "390459135.722625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
          landmarkName = "-doSelectedNewest"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TingShuo04-21/UI/TableCell/TSTieziHeadCell.m"
-         timestampString = "389612126.209387"
+         timestampString = "390459135.722625"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "-doSelectedHotest"
          landmarkType = "5">
       </FileBreakpoint>
@@ -404,6 +391,292 @@
          startingLineNumber = "190"
          endingLineNumber = "190"
          landmarkName = "-doCloseSelected"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMsgViewController.m"
+         timestampString = "390217485.393222"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "260"
+         endingLineNumber = "260"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMsgViewController.m"
+         timestampString = "390217485.393222"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMsgViewController.m"
+         timestampString = "390217485.393222"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "254"
+         endingLineNumber = "254"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/Reply/ReplyViewController.m"
+         timestampString = "390275784.023203"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "302"
+         endingLineNumber = "302"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/Reply/ReplyViewController.m"
+         timestampString = "390275784.023203"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "253"
+         endingLineNumber = "253"
+         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/Reply/ReplyViewController.m"
+         timestampString = "390275784.023203"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "204"
+         endingLineNumber = "204"
+         landmarkName = "-sendMassage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/Chat/ChatViewController.m"
+         timestampString = "390220970.080797"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
+         landmarkName = "-sendMassage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/Chat/ChatViewController.m"
+         timestampString = "390275784.023203"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "364"
+         endingLineNumber = "364"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSQunViewController.m"
+         timestampString = "390371391.827809"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
+         landmarkName = "-foucusCellFrame:didSelectItem:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSRelationViewController.m"
+         timestampString = "390300710.491604"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "402"
+         endingLineNumber = "402"
+         landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
+         timestampString = "390451864.830524"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
+         landmarkName = "-reload:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
+         timestampString = "390451864.830524"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-refresh"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/ASMediaFocusManager/ASMediaFocusManager.m"
+         timestampString = "390373029.139105"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
+         landmarkName = "-handleFocusGesture:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSTieziViewController.m"
+         timestampString = "390456742.695048"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
+         landmarkName = "-loadView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSTieziViewController.m"
+         timestampString = "390456742.695048"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSTieziViewController.m"
+         timestampString = "390456742.695048"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/MainUI/TSMainViewController.m"
+         timestampString = "390459135.722625"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "280"
+         endingLineNumber = "280"
+         landmarkName = "-replyHandler:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/TableCell/TSRelationFensiCell.m"
+         timestampString = "390453128.862454"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "63"
+         endingLineNumber = "63"
+         landmarkName = "-imageViewClickhandler:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/TableCell/TSMainFriCell.m"
+         timestampString = "390456293.074677"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
+         landmarkName = "-replyTextLabelClickhandler:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSShareCommentDingView.m"
+         timestampString = "390458559.021548"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-initButton:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/OtherUI/TSShareCommentDingView.m"
+         timestampString = "390458670.889514"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
+         landmarkName = "-dingClickHandler"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TingShuo04-21/UI/TSSettingViewController.m"
+         timestampString = "390736036.61021"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "192"
+         endingLineNumber = "192"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

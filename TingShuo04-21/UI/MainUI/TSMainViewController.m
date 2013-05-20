@@ -14,6 +14,9 @@
 #import "TSMainQunCell.h"
 
 #import "TSQunViewController.h"
+#import "TSInputToolbar.h"
+
+
 
 @interface TSMainViewController ()
 - (void)reload:(id)sender;
@@ -26,11 +29,13 @@
 @implementation TSMainViewController
 {
 @private
-    __strong UIActivityIndicatorView *_activityIndicatorView;//菊花转
+    //__strong UIActivityIndicatorView *_activityIndicatorView;//菊花转
 }
 @synthesize mainArr;
 @synthesize singleMsgChatDic;
+
 @synthesize releaseViewController = _releaseViewController;
+
 @synthesize renren = _renren;
 @synthesize user = _user;
 
@@ -55,14 +60,19 @@
 //加载数据
 - (void)reload:(id)sender
 {
-    [_activityIndicatorView startAnimating];
-    self.navigationItem.leftBarButtonItem.enabled = NO;
+    //[_activityIndicatorView startAnimating];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 
     ROUserInfoRequestParam *requestParam = [[[ROUserInfoRequestParam alloc] init] autorelease];
     requestParam.userIDs = @"522601598";
 	requestParam.fields = @"uid,name,sex,headurl";
 	
 	[self.renren getUsersInfo:requestParam andDelegate:self];
+}
+//下拉刷新,覆盖父类的方法
+- (void)refresh
+{
+    [self performSelector:@selector(reload:) withObject:nil afterDelay:2.0];
 }
 /**
  * 接口请求成功，第三方开发者实现这个方法
@@ -89,8 +99,9 @@
 	}
     
 	[self.tableView reloadData];
+    [self stopLoading];
     
-    [_activityIndicatorView stopAnimating];
+    //[_activityIndicatorView stopAnimating];
     self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
@@ -109,8 +120,9 @@
 {
     [super loadView];
     
-    _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    _activityIndicatorView.hidesWhenStopped = YES;
+    //_activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    //_activityIndicatorView.hidesWhenStopped = YES;
+    
 }
 
 - (void)viewDidLoad
@@ -119,7 +131,8 @@
     // Do any additional setup after loading the view from its nib.
     
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_activityIndicatorView];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reload:)];
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reload:)];
+    
     
     self.tableView.rowHeight = 70.0f;
     
@@ -129,7 +142,7 @@
 -(void)viewDidUnload
 {
     [super viewDidUnload];
-    _activityIndicatorView = nil;
+    //_activityIndicatorView = nil;
 }
 
 //发布按钮
@@ -175,6 +188,7 @@
                 cell = [[TSMainFriCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
                 [cell updateMsgReplyDic:singleMsgChatDic];
             }
+            cell.delegate = self;
             return cell;
         }
             
@@ -198,6 +212,7 @@
                 cell = [[TSMainQunCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
                 [cell updateMsgReplyDic:singleMsgChatDic];
             }
+            
             return cell;
         }
             
@@ -256,6 +271,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//点击回复，弹出回复输入框和键盘  代理mainfricell方法
+-(void)replyHandler:(NSString *)nameStr
+{
+    //创建toolbar
+    TSInputToolbar *tsToolBar = [[[TSInputToolbar alloc] initWithFrame:CGRectMake(0.0f, 20.0f, 320.0f, 40.0f) ] autorelease];
+    [self.tableView addSubview:tsToolBar];
 }
 
 @end

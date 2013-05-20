@@ -16,8 +16,9 @@
 
 @synthesize msgReply = _msgReply;
 @synthesize mainDic = _mainDic;
-@synthesize replyTextLabel;
+//@synthesize replyTextLabel;
 @synthesize timeTextLabel;
+@synthesize replyTextArr = _replyTextArr;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,14 +33,7 @@
         self.detailTextLabel.font = [UIFont systemFontOfSize:12.0f];
         self.detailTextLabel.numberOfLines = 0;
         //跟显示风格有关系，如果默认的几个显示风格里没有自己想要的可自定义
-        self.replyTextLabel = [[UILabel alloc] init];
-        self.replyTextLabel.font = [UIFont systemFontOfSize:12.0f];
-        self.replyTextLabel.text = @"匿名：跟显示风格有关系，如果默认的几个显示风格里没有自己想要的可自定义";
-        //self.replyTextLabel.textAlignment = UITextAlignmentLeft;
-        self.replyTextLabel.textColor = [ UIColor darkGrayColor];
-        self.replyTextLabel.font = [ UIFont fontWithName: @"Arial" size: 10.0 ];
-        self.replyTextLabel.numberOfLines = 0;
-        [self addSubview:self.replyTextLabel];
+        
         
         self.timeTextLabel = [[UILabel alloc] init];
         self.timeTextLabel.text = @"今天 16:45";
@@ -50,7 +44,7 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleGray;
         
-        
+        _replyTextArr = [[NSMutableArray alloc] init];
     }
     
    return self;
@@ -73,18 +67,53 @@
     _msgReply.time = [mainDic objectForKey:@"sex"];
     
     self.textLabel.text = [mainDic objectForKey:@"name"];
-    //self.detailTextLabel.text = _msgReply.content;
+    self.detailTextLabel.text = @"shahshahshs";
     //self.replyTextLabel.text = _msgReply.time;
     [self.imageView setImageWithURL:[NSURL URLWithString:[mainDic objectForKey:@"headUrl"]] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
+    [self updateReply:nil];
+    
     [self setNeedsLayout];
+}
+//更新回复
+- (void)updateReply:(NSString *)mainStr
+{
+    UILabel *replyTextLabel = [[UILabel alloc] init];
+    replyTextLabel.text = @"匿名：跟显示风格有关系，如果默认的几个显示风格里没有自己想要的可自定义";
+    //self.replyTextLabel.textAlignment = UITextAlignmentLeft;
+    replyTextLabel.textColor = [ UIColor darkGrayColor];
+    replyTextLabel.font = [ UIFont fontWithName: @"Arial" size: 10.0 ];
+    replyTextLabel.numberOfLines = 0;
+    [self addSubview:replyTextLabel];
+    
+    replyTextLabel.frame = CGRectMake(20.0f, 60.0f, 280.0f, 40.0f);
+    
+    replyTextLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(replyTextLabelClickhandler:)];
+    [replyTextLabel addGestureRecognizer:singleTap];
+    [singleTap release];
+    
+    
+    [_replyTextArr addObject:replyTextLabel.text];
+}
+
+//点击回复
+- (void)replyTextLabelClickhandler:(UIGestureRecognizer *)gestureRecognizer
+{
+    if([self.delegate respondsToSelector:@selector(replyHandler:)])
+    {
+        [self.delegate replyHandler:@"某男"];
+    }
+    
 }
 
 + (CGFloat)heightForCellWithMsgReply:(NSDictionary *)mainDic
 {
+     
+     
     CGSize sizeToFit = [[mainDic objectForKey:@"name"] sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake(220.0f, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];
     
-    return fmaxf(70.0f, sizeToFit.height + 75.0f);
+    return fmaxf(85.0f, sizeToFit.height + 85.0f);
 }
 
 #pragma mark - UIView
@@ -101,11 +130,7 @@
     CGRect detailTextLabelFrame = CGRectOffset(self.textLabel.frame, 0.0f, 25.0f);
     detailTextLabelFrame.size.height = [[self class] heightForCellWithMsgReply:self.mainDic] - 45.0f;
     self.detailTextLabel.frame = detailTextLabelFrame;
-    
-    CGRect replyTextLabelFrame = CGRectOffset(self.detailTextLabel.frame, -50.0f, 30.0f);
-    replyTextLabelFrame.size.height = 25.0f;
-    replyTextLabelFrame.size.width = 250.0f;
-    self.replyTextLabel.frame = replyTextLabelFrame;
-    
 }
+
+
 @end

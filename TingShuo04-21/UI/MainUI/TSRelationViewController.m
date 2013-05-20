@@ -25,6 +25,8 @@
 @synthesize qunArr = _qunArr;
 @synthesize fensiFriArr = _fensiFriArr;
 
+@synthesize nowIndexPath = _nowIndexPath;
+
 @synthesize tsFensiChatViewController = _tsFensiChatViewController;
 @synthesize tsAttentionChatViewController = _tsAttentionChatViewController;
 @synthesize tsQunViewController = _tsQunViewController;
@@ -151,7 +153,7 @@
     [_tsPersonIntroUIView showAnimation];
 }
 //个人简介 点击 修改资料按钮 代理函数
--(void)changeInfoClick:(NSString *)qunId
+-(void)changeInfoCallBack:(NSString *)qunId
 {
     
 }
@@ -361,6 +363,44 @@
         default:
             
             break;
+    }
+}
+//向右滑动删除
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"确定取消关注该组吗？" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"确定", nil];
+        switch (curSelected)
+        {
+            case 0:
+                alert.message = @"确定取消关注该组吗？";
+                break;
+            case 1:
+                alert.message = @"确定取消关注该用户吗？";
+                break;
+            default:
+                alert.message = @"确定取消关注该粉丝吗？";
+                break;
+        }
+        
+        [alert show];
+        [alert release];
+        
+        //NSLog(@"%d", indexPath.row);
+        
+        _nowIndexPath = indexPath;
+        
+    }
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        //[self.myArray removeObjectAtIndex:[indexPath row]];//先把词典中的数组删除掉
+        //[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:_nowIndexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
     }
 }
 @end

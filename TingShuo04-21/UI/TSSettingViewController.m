@@ -8,6 +8,7 @@
 
 #import "TSSettingViewController.h"
 #import "AboutViewController.h"
+#import "PasswordFlowLoginViewController.h"
 
 //sections
 enum{
@@ -20,18 +21,18 @@ enum{
 
 //status
 enum{
-    kStatusBlackList = 0,
-    kStatusSetTheme,
-    kStatusMoreReffer,
+    kStatusMyRes = 0,
+    kStatusBlackList,
     kStatusRowsCount,
 };
 
 //kAccountSection
 enum {
-    kCurrentUser = 0,
-    kClearCatch,
-    kFeedback,
+    kFeedback = 0,
     kSupport,
+    kUserProvision,
+    kSecretSetting,
+    kLogout,
     kAccountRowsCount,
 };
 
@@ -105,32 +106,30 @@ enum {
     
     if (section == kAccountSection)
     {
-        if (row == kCurrentUser) {
-            NSString *name = @"景言";
-            cell.textLabel.text = [NSString stringWithFormat:@"当前登陆账号：%@",name];
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
-        else if (row == kClearCatch) {
-            cell.textLabel.text = @"清理缓存";
-        }
-        else if (row == kFeedback){
+        if (row == kFeedback){
             cell.textLabel.text = @"反馈意见";
         }
         else if (row == kSupport) {
-            cell.textLabel.text = @"支持我们";
+            cell.textLabel.text = @"支持我们,来一票！";
+        }
+        else if (row == kUserProvision) {
+            cell.textLabel.text = @"用户条款";
+        }
+        else if (row == kSecretSetting) {
+            cell.textLabel.text = @"隐私设置";
+        }
+        else if (row == kLogout) {
+            cell.textLabel.text = @"退出";
+            cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }
     
     else if (section == kStatusSection) {
-        if (row == kStatusBlackList) {
-            cell.textLabel.text = @"黑名单列表";
+        if (row == kStatusMyRes) {
+            cell.textLabel.text = @"我的资料";
         }
-        
-        else if (row == kStatusSetTheme) {
-            cell.textLabel.text = @"设置主题";
-        }
-        else if (row == kStatusMoreReffer){
-            cell.textLabel.text = @"更多推荐";
+        else if (row == kStatusBlackList) {
+            cell.textLabel.text = @"黑名单";
         }
     }
     return cell;
@@ -138,10 +137,10 @@ enum {
 //退出登录
 -(void)logout
 {
-   //OAuthWebView *webV = [[OAuthWebView alloc]initWithNibName:@"OAuthWebView" bundle:nil];
-    //webV.hidesBottomBarWhenPushed = YES;
-    //[self.navigationController pushViewController:webV animated:YES];
-    //[webV release];
+   PasswordFlowLoginViewController *loginView = [[[PasswordFlowLoginViewController alloc]init]   autorelease];
+    loginView.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:loginView animated:YES];
+    [loginView release];
 }
 /*
 // Override to support conditional editing of the table view.
@@ -182,6 +181,7 @@ enum {
 }
 */
 
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -189,15 +189,19 @@ enum {
     NSInteger row = indexPath.row;
     NSInteger section = indexPath.section;
     
-    if (section == kAccountSection ) {
-        if (row == kCurrentUser) {
+    if (section == kStatusSection ) {
+        if (row == kStatusMyRes) {
             
         }
         
-        else if (row == kClearCatch) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"确定要清理一天前的缓存吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"更换", nil];
-            [alert show];
-            [alert release];
+        else if (row == kStatusBlackList) {
+        
+        }
+    }
+    
+    else if (section == kAccountSection) {
+        if (row == kFeedback) {
+            
         }
         
         else if (row == kSupport) {
@@ -206,19 +210,17 @@ enum {
             [self.navigationController pushViewController:a animated:YES];
             [a release];
         }
-    }
-    
-    else if (section == kStatusSection) {
-        if (row == kStatusBlackList) {
+        
+        else if (row == kUserProvision) {
             
         }
-        
-        else if (row == kStatusSetTheme) {
+        else if (row == kSecretSetting) {
             
         }
-        
-        else if (row == kStatusMoreReffer) {
-            
+        else if (row == kLogout) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"确定要退出吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
+            [alert show];
+            [alert release];
         }
     }
 }

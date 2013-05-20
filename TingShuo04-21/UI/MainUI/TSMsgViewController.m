@@ -12,6 +12,8 @@
 #import "TSMsgChatCell.h"
 #import "TSMsgReplyCell.h"
 #import "TSMeViewController.h"
+#import "ChatViewController.h"
+#import "ReplyViewController.h"
 
 @interface TSMsgViewController ()
 - (void)reload:(id)sender;
@@ -27,6 +29,7 @@
 @synthesize msgChatDic;
 @synthesize singleMsgChatDic;
 @synthesize segmentedController;
+@synthesize chatDic = _chatDic;
 //加载数据
 - (void)reload:(id)sender
 {
@@ -67,6 +70,9 @@
         UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"消息" image:nil tag:2];
         self.tabBarItem = item;
 
+        _chatDic = [NSMutableDictionary dictionaryWithCapacity:10];
+        //ChatViewController *chat = [[ChatViewController alloc] init];
+        //[_chatDic setObject:chat forKey:@"0"];
     }
     return self;
 }
@@ -245,10 +251,32 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    TSMeViewController *tsMeViewController = [[TSMeViewController alloc] init];
-    [self.navigationController pushViewController:tsMeViewController animated:YES];
-    [tsMeViewController updateContent:nil];
-    [tsMeViewController release];
+    
+    NSString *key = [NSString stringWithFormat:@"%d", [indexPath row]];
+    
+    switch (segmentedController.selectedSegmentIndex) {
+        case 0:
+        {
+            ChatViewController *chat = [[ChatViewController alloc] init];//[_chatDic objectForKey:key];
+            
+            [chat setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:chat animated:YES];
+            chat.title = @"与xx聊天";
+            [chat release];
+            break;
+        }
+            
+        default:
+        {
+            ReplyViewController *reply = [[ReplyViewController alloc] init];
+            [reply setHidesBottomBarWhenPushed:YES];
+            [self.navigationController pushViewController:reply animated:YES];
+            reply.title = @"回复XX";
+            [reply release];
+            break;
+        }
+    }
+    
 }
 
 @end

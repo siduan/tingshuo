@@ -14,6 +14,7 @@
 @property (nonatomic, strong) MsgChat *msgChat;
 @property (nonatomic, strong) NSDictionary *msgChatDic;
 
+
 + (CGFloat)heightForCellWithMsgChat:(NSDictionary *)msgChatDic;
 
 - (void)updateMsgChatDic:(NSDictionary *)msgChatDic;

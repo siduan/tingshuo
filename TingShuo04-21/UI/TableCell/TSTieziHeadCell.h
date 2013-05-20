@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSShareCommentDingView.h"
+
 @protocol TSTieziHeadCellDelegate;
 
-@interface TSTieziHeadCell : UITableViewCell
+@interface TSTieziHeadCell : UITableViewCell <TSShareCommentDingViewDelegate>
 
 @property (nonatomic, retain) id <TSTieziHeadCellDelegate> delegate;
 
@@ -20,6 +22,10 @@
 
 @property (nonatomic, strong) UIButton *newestButton;//“最新”
 @property (nonatomic, strong) UIButton *hotestButton;//“最热”
+
+@property (nonatomic, strong) TSShareCommentDingView *scdView;
+
+@property (nonatomic, strong) NSMutableArray *imageViewArr;//存放发布的图片
 
 //更新内容
 - (void)updateContents:(NSArray *)conArr;

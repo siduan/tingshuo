@@ -255,6 +255,23 @@
 		901A78CC173E37D100F6C708 /* TSReleaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901A78CA173E37D000F6C708 /* TSReleaseViewController.xib */; };
 		901A78CF173E3D3000F6C708 /* input_window.png in Resources */ = {isa = PBXBuildFile; fileRef = 901A78CD173E3D3000F6C708 /* input_window.png */; };
 		901A78D0173E3D3000F6C708 /* input_window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 901A78CE173E3D3000F6C708 /* input_window@2x.png */; };
+		901A78DB174225DE00F6C708 /* ReplyCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901A78D3174225DE00F6C708 /* ReplyCustomCell.m */; };
+		901A78DD174225DE00F6C708 /* ReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901A78D6174225DE00F6C708 /* ReplyViewController.m */; };
+		901A78DE174225DE00F6C708 /* ReplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901A78D7174225DE00F6C708 /* ReplyViewController.xib */; };
+		901A78DF174225DE00F6C708 /* ReplyFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 901A78D9174225DE00F6C708 /* ReplyFaceViewController.m */; };
+		901A78E0174225DE00F6C708 /* ReplyFaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901A78DA174225DE00F6C708 /* ReplyFaceViewController.xib */; };
+		901A78E317422F9A00F6C708 /* TSReplyheadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 901A78E217422F9900F6C708 /* TSReplyheadCell.m */; };
+		9091692A1743332F00307A74 /* TSScrollTopTenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909169291743332F00307A74 /* TSScrollTopTenView.m */; };
+		9091692D1743428500307A74 /* TSScrollTopTenItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091692C1743428500307A74 /* TSScrollTopTenItem.m */; };
+		9091692F1743880100307A74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9091692E1743880100307A74 /* QuartzCore.framework */; };
+		9091693217438A7D00307A74 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091693117438A7D00307A74 /* PullRefreshTableViewController.m */; };
+		9091693417438C5F00307A74 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9091693317438C5F00307A74 /* arrow.png */; };
+		9091693D17447C3600307A74 /* ASImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091693717447C3600307A74 /* ASImageScrollView.m */; };
+		9091693E17447C3600307A74 /* ASMediaFocusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091693917447C3600307A74 /* ASMediaFocusController.m */; };
+		9091693F17447C3600307A74 /* ASMediaFocusController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9091693A17447C3600307A74 /* ASMediaFocusController.xib */; };
+		9091694017447C3600307A74 /* ASMediaFocusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9091693C17447C3600307A74 /* ASMediaFocusManager.m */; };
+		909169431745CBCB00307A74 /* TSInputToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 909169421745CBCA00307A74 /* TSInputToolbar.m */; };
+		909169461745E68C00307A74 /* TSShareCommentDingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909169451745E68B00307A74 /* TSShareCommentDingView.m */; };
 		909701FD1723873F005EA45F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909701FC1723873F005EA45F /* UIKit.framework */; };
 		909701FF1723873F005EA45F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909701FE1723873F005EA45F /* Foundation.framework */; };
 		909702011723873F005EA45F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909702001723873F005EA45F /* CoreGraphics.framework */; };
@@ -646,6 +663,35 @@
 		901A78CA173E37D000F6C708 /* TSReleaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TSReleaseViewController.xib; path = OtherUI/TSReleaseViewController.xib; sourceTree = "<group>"; };
 		901A78CD173E3D3000F6C708 /* input_window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input_window.png; sourceTree = "<group>"; };
 		901A78CE173E3D3000F6C708 /* input_window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_window@2x.png"; sourceTree = "<group>"; };
+		901A78D2174225DE00F6C708 /* ReplyCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyCustomCell.h; sourceTree = "<group>"; };
+		901A78D3174225DE00F6C708 /* ReplyCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyCustomCell.m; sourceTree = "<group>"; };
+		901A78D5174225DE00F6C708 /* ReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyViewController.h; sourceTree = "<group>"; };
+		901A78D6174225DE00F6C708 /* ReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyViewController.m; sourceTree = "<group>"; };
+		901A78D7174225DE00F6C708 /* ReplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyViewController.xib; sourceTree = "<group>"; };
+		901A78D8174225DE00F6C708 /* ReplyFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyFaceViewController.h; sourceTree = "<group>"; };
+		901A78D9174225DE00F6C708 /* ReplyFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyFaceViewController.m; sourceTree = "<group>"; };
+		901A78DA174225DE00F6C708 /* ReplyFaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyFaceViewController.xib; sourceTree = "<group>"; };
+		901A78E117422F9800F6C708 /* TSReplyheadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSReplyheadCell.h; sourceTree = "<group>"; };
+		901A78E217422F9900F6C708 /* TSReplyheadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSReplyheadCell.m; sourceTree = "<group>"; };
+		909169281743332F00307A74 /* TSScrollTopTenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSScrollTopTenView.h; path = "TingShuo04-21/UI/OtherUI/TSScrollTopTenView.h"; sourceTree = SOURCE_ROOT; };
+		909169291743332F00307A74 /* TSScrollTopTenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSScrollTopTenView.m; path = "TingShuo04-21/UI/OtherUI/TSScrollTopTenView.m"; sourceTree = SOURCE_ROOT; };
+		9091692B1743428500307A74 /* TSScrollTopTenItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSScrollTopTenItem.h; path = "TingShuo04-21/UI/OtherUI/TSScrollTopTenItem.h"; sourceTree = SOURCE_ROOT; };
+		9091692C1743428500307A74 /* TSScrollTopTenItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSScrollTopTenItem.m; path = "TingShuo04-21/UI/OtherUI/TSScrollTopTenItem.m"; sourceTree = SOURCE_ROOT; };
+		9091692E1743880100307A74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9091693017438A7D00307A74 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullRefreshTableViewController.h; path = OtherUI/PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		9091693117438A7D00307A74 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullRefreshTableViewController.m; path = OtherUI/PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		9091693317438C5F00307A74 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		9091693617447C3600307A74 /* ASImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASImageScrollView.h; sourceTree = "<group>"; };
+		9091693717447C3600307A74 /* ASImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASImageScrollView.m; sourceTree = "<group>"; };
+		9091693817447C3600307A74 /* ASMediaFocusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaFocusController.h; sourceTree = "<group>"; };
+		9091693917447C3600307A74 /* ASMediaFocusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaFocusController.m; sourceTree = "<group>"; };
+		9091693A17447C3600307A74 /* ASMediaFocusController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASMediaFocusController.xib; sourceTree = "<group>"; };
+		9091693B17447C3600307A74 /* ASMediaFocusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMediaFocusManager.h; sourceTree = "<group>"; };
+		9091693C17447C3600307A74 /* ASMediaFocusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMediaFocusManager.m; sourceTree = "<group>"; };
+		909169411745CBCA00307A74 /* TSInputToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSInputToolbar.h; path = OtherUI/TSInputToolbar.h; sourceTree = "<group>"; };
+		909169421745CBCA00307A74 /* TSInputToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSInputToolbar.m; path = OtherUI/TSInputToolbar.m; sourceTree = "<group>"; };
+		909169441745E68A00307A74 /* TSShareCommentDingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSShareCommentDingView.h; path = OtherUI/TSShareCommentDingView.h; sourceTree = "<group>"; };
+		909169451745E68B00307A74 /* TSShareCommentDingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSShareCommentDingView.m; path = OtherUI/TSShareCommentDingView.m; sourceTree = "<group>"; };
 		909701F91723873F005EA45F /* TingShuo04-21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TingShuo04-21.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909701FC1723873F005EA45F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		909701FE1723873F005EA45F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -857,6 +903,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9091692F1743880100307A74 /* QuartzCore.framework in Frameworks */,
 				9097058F172395CC005EA45F /* libsqlite3.0.dylib in Frameworks */,
 				909701FD1723873F005EA45F /* UIKit.framework in Frameworks */,
 				909701FF1723873F005EA45F /* Foundation.framework in Frameworks */,
@@ -1118,6 +1165,49 @@
 			path = Face;
 			sourceTree = "<group>";
 		};
+		901A78D11742250200F6C708 /* Reply */ = {
+			isa = PBXGroup;
+			children = (
+				901A78D2174225DE00F6C708 /* ReplyCustomCell.h */,
+				901A78D3174225DE00F6C708 /* ReplyCustomCell.m */,
+				901A78D5174225DE00F6C708 /* ReplyViewController.h */,
+				901A78D6174225DE00F6C708 /* ReplyViewController.m */,
+				901A78D7174225DE00F6C708 /* ReplyViewController.xib */,
+				901A78D8174225DE00F6C708 /* ReplyFaceViewController.h */,
+				901A78D9174225DE00F6C708 /* ReplyFaceViewController.m */,
+				901A78DA174225DE00F6C708 /* ReplyFaceViewController.xib */,
+				901A78E117422F9800F6C708 /* TSReplyheadCell.h */,
+				901A78E217422F9900F6C708 /* TSReplyheadCell.m */,
+			);
+			path = Reply;
+			sourceTree = "<group>";
+		};
+		901A78E71743316100F6C708 /* ScrollTopTen */ = {
+			isa = PBXGroup;
+			children = (
+				909169281743332F00307A74 /* TSScrollTopTenView.h */,
+				909169291743332F00307A74 /* TSScrollTopTenView.m */,
+				9091692B1743428500307A74 /* TSScrollTopTenItem.h */,
+				9091692C1743428500307A74 /* TSScrollTopTenItem.m */,
+			);
+			path = ScrollTopTen;
+			sourceTree = "<group>";
+		};
+		9091693517447C3500307A74 /* ASMediaFocusManager */ = {
+			isa = PBXGroup;
+			children = (
+				9091693617447C3600307A74 /* ASImageScrollView.h */,
+				9091693717447C3600307A74 /* ASImageScrollView.m */,
+				9091693817447C3600307A74 /* ASMediaFocusController.h */,
+				9091693917447C3600307A74 /* ASMediaFocusController.m */,
+				9091693A17447C3600307A74 /* ASMediaFocusController.xib */,
+				9091693B17447C3600307A74 /* ASMediaFocusManager.h */,
+				9091693C17447C3600307A74 /* ASMediaFocusManager.m */,
+			);
+			name = ASMediaFocusManager;
+			path = ../ASMediaFocusManager;
+			sourceTree = "<group>";
+		};
 		909701F01723873E005EA45F = {
 			isa = PBXGroup;
 			children = (
@@ -1140,6 +1230,7 @@
 		909701FB1723873F005EA45F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9091692E1743880100307A74 /* QuartzCore.framework */,
 				9097058E172395CC005EA45F /* libsqlite3.0.dylib */,
 				909701FC1723873F005EA45F /* UIKit.framework */,
 				909701FE1723873F005EA45F /* Foundation.framework */,
@@ -1204,6 +1295,7 @@
 		909702F417238BCC005EA45F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9091693317438C5F00307A74 /* arrow.png */,
 				901A78CD173E3D3000F6C708 /* input_window.png */,
 				901A78CE173E3D3000F6C708 /* input_window@2x.png */,
 				900BA06B17327E550082B43F /* Icon.png */,
@@ -1217,6 +1309,9 @@
 		909702F617238BCC005EA45F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9091693517447C3500307A74 /* ASMediaFocusManager */,
+				901A78E71743316100F6C708 /* ScrollTopTen */,
+				901A78D11742250200F6C708 /* Reply */,
 				901A76FD173B39A000F6C708 /* Chat */,
 				9097074317282289005EA45F /* OtherUI */,
 				9097031B17238C5F005EA45F /* Login */,
@@ -1600,6 +1695,8 @@
 		9097074317282289005EA45F /* OtherUI */ = {
 			isa = PBXGroup;
 			children = (
+				9091693017438A7D00307A74 /* PullRefreshTableViewController.h */,
+				9091693117438A7D00307A74 /* PullRefreshTableViewController.m */,
 				901A78C8173E37CE00F6C708 /* TSReleaseViewController.h */,
 				901A78C9173E37CF00F6C708 /* TSReleaseViewController.m */,
 				901A78CA173E37D000F6C708 /* TSReleaseViewController.xib */,
@@ -1614,6 +1711,10 @@
 				901A76F61738EA2800F6C708 /* TSTieziViewController.m */,
 				901A78C5173C7B1500F6C708 /* TSPersonIntroUIView.h */,
 				901A78C6173C7B1500F6C708 /* TSPersonIntroUIView.m */,
+				909169411745CBCA00307A74 /* TSInputToolbar.h */,
+				909169421745CBCA00307A74 /* TSInputToolbar.m */,
+				909169441745E68A00307A74 /* TSShareCommentDingView.h */,
+				909169451745E68B00307A74 /* TSShareCommentDingView.m */,
 			);
 			name = OtherUI;
 			sourceTree = "<group>";
@@ -1933,6 +2034,10 @@
 				901A78CC173E37D100F6C708 /* TSReleaseViewController.xib in Resources */,
 				901A78CF173E3D3000F6C708 /* input_window.png in Resources */,
 				901A78D0173E3D3000F6C708 /* input_window@2x.png in Resources */,
+				901A78DE174225DE00F6C708 /* ReplyViewController.xib in Resources */,
+				901A78E0174225DE00F6C708 /* ReplyFaceViewController.xib in Resources */,
+				9091693417438C5F00307A74 /* arrow.png in Resources */,
+				9091693F17447C3600307A74 /* ASMediaFocusController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2043,6 +2148,18 @@
 				901A7712173B39A300F6C708 /* IPAdress.c in Sources */,
 				901A78C7173C7B1600F6C708 /* TSPersonIntroUIView.m in Sources */,
 				901A78CB173E37D100F6C708 /* TSReleaseViewController.m in Sources */,
+				901A78DB174225DE00F6C708 /* ReplyCustomCell.m in Sources */,
+				901A78DD174225DE00F6C708 /* ReplyViewController.m in Sources */,
+				901A78DF174225DE00F6C708 /* ReplyFaceViewController.m in Sources */,
+				901A78E317422F9A00F6C708 /* TSReplyheadCell.m in Sources */,
+				9091692A1743332F00307A74 /* TSScrollTopTenView.m in Sources */,
+				9091692D1743428500307A74 /* TSScrollTopTenItem.m in Sources */,
+				9091693217438A7D00307A74 /* PullRefreshTableViewController.m in Sources */,
+				9091693D17447C3600307A74 /* ASImageScrollView.m in Sources */,
+				9091693E17447C3600307A74 /* ASMediaFocusController.m in Sources */,
+				9091694017447C3600307A74 /* ASMediaFocusManager.m in Sources */,
+				909169431745CBCB00307A74 /* TSInputToolbar.m in Sources */,
+				909169461745E68C00307A74 /* TSShareCommentDingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2128,7 +2245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -2138,7 +2255,6 @@
 				INFOPLIST_FILE = "TingShuo04-21/TingShuo04-21-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2147,7 +2263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -2157,7 +2273,6 @@
 				INFOPLIST_FILE = "TingShuo04-21/TingShuo04-21-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

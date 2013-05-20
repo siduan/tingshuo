@@ -12,11 +12,18 @@
 #import "TSQunContentCell.h"
 #import "TSTieziViewController.h"
 
+static CGFloat const kMaxAngle = 0.1;
+static CGFloat const kMaxOffset = 20;
+
 @interface TSQunViewController ()
 
 @end
 
 @implementation TSQunViewController
+
+@synthesize cellImgsDic = _cellImgsDic;
+@synthesize cellImgsArr = _cellImgsArr;
+@synthesize mediaFocusManager = _mediaFocusManager;
 
 static TSQunViewController *_sharedInstance = nil;
 
@@ -59,6 +66,12 @@ static TSQunViewController *_sharedInstance = nil;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _cellImgsDic = [[NSMutableDictionary alloc] init];
+    _cellImgsArr = [NSMutableArray arrayWithCapacity:5];
+    
+    _mediaFocusManager = [[ASMediaFocusManager alloc] init];
+    _mediaFocusManager.delegate = self;
 }
 
 - (void)loadView
@@ -110,19 +123,30 @@ static TSQunViewController *_sharedInstance = nil;
                 cell = [[TSQunHeadCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
             }
             [cell updateContents:nil];
+            [_cellImgsDic setValue:cell.imageViewArr forKey:[NSString stringWithFormat:@"%d", indexPath.row]];
             return cell;
             //break;
         }
         case 1:
         {
             CellIdentifier = @"toptenCell";
-            TSQunTopTenCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            UITableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             if (!cell) {
-                cell = [[TSQunTopTenCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
             }
-            [cell updateContents:nil];
+            
+            TSScrollTopTenItem *item1 = [[[TSScrollTopTenItem alloc] initWithTitle:@"title1" image:[UIImage imageNamed:@"banner1"] tag:0] autorelease];
+            TSScrollTopTenItem *item2 = [[[TSScrollTopTenItem alloc] initWithTitle:@"title2" image:[UIImage imageNamed:@"banner2"] tag:1] autorelease];
+            TSScrollTopTenItem *item3 = [[[TSScrollTopTenItem alloc] initWithTitle:@"title3" image:[UIImage imageNamed:@"banner3"] tag:2] autorelease];
+            TSScrollTopTenItem *item4 = [[[TSScrollTopTenItem alloc] initWithTitle:@"title4" image:[UIImage imageNamed:@"banner4"] tag:4] autorelease];
+            TSScrollTopTenView *cellFrame = [[TSScrollTopTenView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 110.0)
+                                                                            delegate:self
+                                                                     focusCellItems:item1, item2, item3, item4, nil];
+            [cell addSubview:cellFrame];
+            
+            [cellFrame release];
+            
             return cell;
-            //break;
         }
         default:
         {
@@ -213,8 +237,82 @@ static TSQunViewController *_sharedInstance = nil;
         [tieziViewController release];
 
     }
+    else
+    {
+        _cellImgsArr = [_cellImgsDic objectForKey:[NSString stringWithFormat:@"%d", indexPath.row]];
+        [self.mediaFocusManager installOnViews:_cellImgsArr];
+        
+        [self addSomeRandomTransformOnThumbnailViews];
+    }
     
+}
+
+#pragma mark -
+- (void)foucusCellFrame:(TSScrollTopTenView *)cellFrame didSelectItem:(TSScrollTopTenItem *)item
+{
+    NSLog(@"%@ tapped", item.title);
+    TSTieziViewController *tieziViewController = [[TSTieziViewController alloc] init];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:tieziViewController animated:YES];
+    [tieziViewController updateContent:nil];
+    [tieziViewController release];
+}
+
+///////////////////以下是点击小图片方大全屏的代码
++ (float)randomFloatBetween:(float)smallNumber andMax:(float)bigNumber
+{
+    float diff = bigNumber - smallNumber;
     
+    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
+}
+
+- (void)addSomeRandomTransformOnThumbnailViews
+{
+    for(UIView *view in _cellImgsArr)
+    {
+        CGFloat angle;
+        NSInteger offsetX;
+        NSInteger offsetY;
+        
+        angle = [TSQunViewController randomFloatBetween:-kMaxAngle andMax:kMaxAngle];
+        offsetX = (NSInteger)[TSQunViewController randomFloatBetween:-kMaxOffset andMax:kMaxOffset];
+        offsetY = (NSInteger)[TSQunViewController randomFloatBetween:-kMaxOffset andMax:kMaxOffset];
+        view.transform = CGAffineTransformMakeRotation(angle);
+        view.center = CGPointMake(view.center.x + offsetX, view.center.y + offsetY);
+        
+        // This is going to avoid crispy edges.
+        view.layer.shouldRasterize = YES;
+        view.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    }
+}
+#pragma mark - ASMediaFocusDelegate
+- (UIImage *)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager imageForView:(UIView *)view
+{
+    return ((UIImageView *)view).image;
+}
+
+- (CGRect)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager finalFrameforView:(UIView *)view
+{
+    return self.parentViewController.view.bounds;
+}
+
+- (UIViewController *)parentViewControllerForMediaFocusManager:(ASMediaFocusManager *)mediaFocusManager
+{
+    return self.parentViewController;
+}
+
+- (NSString *)mediaFocusManager:(ASMediaFocusManager *)mediaFocusManager mediaPathForView:(UIView *)view
+{
+    NSString *path;
+    NSString *name;
+    
+    // Here, images are accessed through their name "1f.jpg", "2f.jpg", …
+    //name = [NSString stringWithFormat:@"%df", ([_cellImgsArr indexOfObject:view] + 1)];
+    name = @"Icon";
+    path = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
+    
+    return path;
 }
 
 @end

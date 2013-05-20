@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 //设置
-@interface TSSettingViewController : UITableViewController
+@interface TSSettingViewController : UITableViewController <UIAlertViewDelegate>
 
 @end

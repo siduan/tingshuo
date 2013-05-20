@@ -24,6 +24,7 @@
         _topTextLabel.font = [ UIFont fontWithName: @"Arial" size: 15.0 ];
         _topTextLabel.textColor = [UIColor redColor];
         _topTextLabel.numberOfLines = 1;
+        _topTextLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_topTextLabel];
         
         _searchTimesTextLabel = [[UILabel alloc] init];
@@ -56,7 +57,7 @@
 
 - (void)updateContents:(NSArray *)conArr
 {
-    _topTextLabel.text = @"本周TOP1";
+    _topTextLabel.text = @"本周TOP";
     _searchTimesTextLabel.text = @"浏览92843次";
     _timeTextLabel.text = @"2013-5-11 11:21";
     _contentTextLabel.text = @"我骑着一头小毛驴去上学，不小心甩了一身泥,hahahaha,床前明月光，自挂东南枝。";

@@ -13,7 +13,7 @@
 #import "ChatViewController.h"
 #import "TSQunViewController.h"
 
-@interface TSRelationViewController : UITableViewController<TSRelationQunCellDelegate, TSRelationFensiCellDelegate, TSRelationAttentionCellDelegate, TSPersonIntroDelegate>
+@interface TSRelationViewController : UITableViewController<TSRelationQunCellDelegate, TSRelationFensiCellDelegate, TSRelationAttentionCellDelegate, TSPersonIntroDelegate, UIAlertViewDelegate>
 {
     int curSelected;//选择了哪一个二级导航
 }
@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSArray *qunArr;//群组的列表 plist获取
 @property (strong, nonatomic) NSArray *attentionFriArr;//关注好友的列表 plist获取
 @property (strong, nonatomic) NSArray *fensiFriArr;//粉丝好友的列表 plist获取
+
+@property (strong, nonatomic) NSIndexPath *nowIndexPath;
 
 @property (strong, nonatomic) ChatViewController *tsFensiChatViewController;
 @property (strong, nonatomic) ChatViewController *tsAttentionChatViewController;

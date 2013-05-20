@@ -16,6 +16,9 @@
 @synthesize contentTextLabel = _contentTextLabel;
 @synthesize newestButton = _newestButton;
 @synthesize hotestButton = _hotestButton;
+@synthesize scdView = _scdView;
+
+@synthesize imageViewArr = _imageViewArr;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -57,8 +60,21 @@
         [_hotestButton setTitle:@"最热" forState:UIControlStateNormal];
         [_hotestButton addTarget:self action:@selector(doSelectedHotest) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_hotestButton];
+        
+        _scdView = [[[TSShareCommentDingView alloc] initWithFrame:CGRectMake(200, 220, 120, 20)] autorelease];
+        _scdView.delegate = self;
+        [_scdView initButton:1];
+        [self addSubview:_scdView];
+        
+        _imageViewArr = [NSMutableArray arrayWithCapacity:5];
     }
     return self;
+}
+
+//判断点击了那个按钮1；share 2;comment 3;ding   代理
+-(void)shareCommtetDing:(int)index
+{
+    
 }
 
 //选择了最新的按钮
@@ -103,10 +119,12 @@
     for (int j = 0; j < 5; j++)
     {
         UIImageView *qunImg = [[UIImageView alloc] init];
-        [qunImg setImageWithURL:[NSURL URLWithString:@"http://www.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png"] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        [qunImg setImageWithURL:[NSURL URLWithString:@"http://www.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png"] placeholderImage:[UIImage imageNamed:@"Icon.png"]];
         [self addSubview:qunImg];
         
         qunImg.frame = CGRectMake(10.0f+(j%3)*70, 80.0f+(j/3)*70, 60.0f, 60.0f);
+        
+        [_imageViewArr addObject:qunImg];
     }
     
 }
